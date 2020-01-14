@@ -9,7 +9,7 @@ plugins:
 provider:
   name: aws
   region: eu-central-1
-  runtime: nodejs12.14
+  runtime: nodejs12.x
   stage: dev
   profile: chienboul-dev
   memorySize: 128
@@ -22,9 +22,9 @@ custom:
 functions:
   # APIGateway
   players:
-    handler: api/handlers/players.handler
+    handler: src/api/handlers/players.handler
     events:
       - http:
-          path: /players
+          path: /players/{any+}
           method: ANY
           cors: true

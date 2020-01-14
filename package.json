@@ -6,7 +6,9 @@
   "scripts": {
     "lint": "eslint src",
     "test": "jest",
-    "offline-start": "export AWS_PROFILE='chienboul-dev' && serverless offline start --verbose --stage dev"
+    "offline-start": "export AWS_PROFILE='chienboul-dev' && serverless offline start --verbose --stage dev",
+    "deploy-dev": "serverless deploy --verbose --stage dev",
+    "remove-dev": "serverless remove --verbose --stage dev"
   },
   "keywords": [],
   "author": "",
