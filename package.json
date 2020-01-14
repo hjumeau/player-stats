@@ -1,0 +1,31 @@
+{
+  "name": "player-stats",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "offline-start": "export AWS_PROFILE='chienboul-dev' && serverless offline start --verbose --stage dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^3.6.0",
+    "eslint-config-airbnb-base": "^8.0.0",
+    "eslint-plugin-import": "^2.20.0",
+    "serverless": "^1.61.0",
+    "serverless-offline": "^5.12.1",
+    "serverless-plugin-tracing": "^2.0.0",
+    "serverless-webpack": "^5.3.1",
+    "webpack": "^4.41.5",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "dependencies": {
+    "body-parser": "latest",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "serverless-http": "^2.3.0",
+    "winston": "^3.2.1"
+  }
+}

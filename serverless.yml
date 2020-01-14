@@ -1,0 +1,30 @@
+service:
+  name: player-stats-serverless
+
+# Add the serverless-webpack plugin
+plugins:
+  - serverless-webpack
+  - serverless-offline
+
+provider:
+  name: aws
+  region: eu-central-1
+  runtime: nodejs12.14
+  stage: dev
+  profile: chienboul-dev
+  memorySize: 128
+  timeout: 300
+
+custom:
+  webpack:
+    includeModules: true
+
+functions:
+  # APIGateway
+  players:
+    handler: api/handlers/players.handler
+    events:
+      - http:
+          path: /players
+          method: ANY
+          cors: true
