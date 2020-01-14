@@ -4,16 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint src",
+    "test": "jest",
     "offline-start": "export AWS_PROFILE='chienboul-dev' && serverless offline start --verbose --stage dev"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "eslint": "^3.6.0",
-    "eslint-config-airbnb-base": "^8.0.0",
+    "eslint": "^5.12.0",
     "eslint-plugin-import": "^2.20.0",
+    "eslint-config-airbnb-base": "^14.0.0",
     "jest": "^24.9.0",
     "serverless": "^1.61.0",
     "serverless-offline": "^5.12.1",

@@ -1,5 +1,5 @@
-const errorCodes = require('../helpers/error.codes.js');
-const logger = require('../helpers/logger');
+const errorCodes = require('./error.codes.js');
+const logger = require('./logger');
 
 exports.errorHandler = (err, req, res, next) => {
   if (res.headersSent) {

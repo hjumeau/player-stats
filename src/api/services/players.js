@@ -13,5 +13,5 @@ exports.getById = async (id) => {
   const response = await axios.get('https://eurosportdigital.github.io/eurosport-node-developer-recruitment/headtohead.json');
   const { players } = response.data;
 
-  return players.find(player => player.id === id);
+  return players.find((player) => player.id === id);
 };

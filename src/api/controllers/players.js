@@ -7,7 +7,7 @@ exports.getAll = async (req, res) => {
 
 exports.getById = async (req, res) => {
   const playerId = parseInt(req.params.id, 10);
-  if (isNaN(playerId)) {
+  if (Number.isNaN(playerId)) {
     res.status(400).end();
     return;
   }

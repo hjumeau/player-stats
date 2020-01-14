@@ -1,5 +1,5 @@
 const request = require('supertest');
-const app = require('../server')(require('../routes/players'));
+const app = require('../server')(require('./players'));
 const playersService = require('../services/players');
 
 jest.mock('../services/players');
@@ -8,7 +8,7 @@ describe('API players', () => {
   describe('GET players', () => {
     it('should return all the players', async () => {
       const res = await request(app)
-      .get('/players');
+        .get('/players');
 
       expect(res.statusCode).toEqual(200);
       expect(playersService.getAll).toHaveBeenCalled();
@@ -56,19 +56,18 @@ describe('API players', () => {
       const id = undefined;
 
       it('should return undefined', async () => {
-          // GIVEN
+        // GIVEN
         const playerId = id;
         playersService.getById.mockReturnValue(undefined);
 
-          // WHEN
+        // WHEN
         const res = await request(app)
-            .get(`/players/${playerId}`);
+          .get(`/players/${playerId}`);
 
-          // THEN
+        // THEN
         expect(res.statusCode).toEqual(400);
         expect(playersService.getById).not.toHaveBeenCalled();
       });
     });
   });
 });
-
