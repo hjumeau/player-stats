@@ -21,6 +21,7 @@ describe('API players', () => {
 
       it('should return the expected player', async () => {
         // GIVEN
+        playersService.getById.mockReturnValue({});
         const playerId = id;
 
         // WHEN
@@ -64,8 +65,8 @@ describe('API players', () => {
             .get(`/players/${playerId}`);
 
           // THEN
-        expect(res.statusCode).toEqual(404);
-        expect(playersService.getById).toHaveBeenCalledWith(id);
+        expect(res.statusCode).toEqual(400);
+        expect(playersService.getById).not.toHaveBeenCalled();
       });
     });
   });

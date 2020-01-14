@@ -1,16 +1,22 @@
 const playersService = require('../services/players');
 
-exports.getAll = (req, res) => {
-  const players = playersService.getAll();
+exports.getAll = async (req, res) => {
+  const players = await playersService.getAll();
   res.status(200).json(players);
 };
 
-exports.getById = (req, res) => {
+exports.getById = async (req, res) => {
   const playerId = parseInt(req.params.id, 10);
-  const player = playersService.getById(playerId);
+  if (isNaN(playerId)) {
+    res.status(400).end();
+    return;
+  }
+
+  const player = await playersService.getById(playerId);
 
   if (!player) {
     res.status(404).end();
   }
+
   res.status(200).json(player);
 };
