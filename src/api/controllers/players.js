@@ -16,6 +16,7 @@ exports.getById = async (req, res) => {
 
   if (!player) {
     res.status(404).end();
+    return;
   }
 
   res.status(200).json(player);

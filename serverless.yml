@@ -28,3 +28,7 @@ functions:
           path: /players/{any+}
           method: ANY
           cors: true
+      - http:
+          path: /players
+          method: ANY
+          cors: true
